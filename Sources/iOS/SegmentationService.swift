@@ -41,11 +41,11 @@ public final class SegmentationService {
         request.httpMethod = "POST"
         request.timeoutInterval = 30.0
         
-        let scale = image.scaled(maxDimensions: CGSize(width: 1000, height: 1000))
+        //let scale = image.scaled(maxDimensions: CGSize(width: 1000, height: 1000))
         //TODO improve image orientation management
-        let scaledImage = image.scaled(by: scale)
+        //let scaledImage = image.scaled(by: scale)
 
-        guard let media = Media(withImage: scaledImage, forKey: "image_file") else {
+        guard let media = Media(withImage: image, forKey: "image_file") else {
             onCompletion(nil, SegmentationError.invalidData)
             return
         }

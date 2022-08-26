@@ -97,6 +97,7 @@ final public class PhotoRoomViewController: UIViewController {
         button.backgroundColor = color
         button.layer.cornerRadius = padding
         button.titleLabel?.font = .systemFont(ofSize: 16, weight: .bold)
+        button.addTarget(self, action: #selector(loading), for: .touchDown)
         button.addTarget(self, action: #selector(didTapValidate), for: .touchUpInside)
         return button
     }()
@@ -202,6 +203,12 @@ final public class PhotoRoomViewController: UIViewController {
 
     @objc private func didTapDismiss(button _: UIButton) {
         dismiss(animated: true)
+    }
+    
+    @objc private func loading(button _:UIButton){
+        self.validateButton.isHidden = true
+        self.loadingIndicator.isHidden = false
+        return
     }
 
     @objc private func didTapValidate(button _: UIButton) {

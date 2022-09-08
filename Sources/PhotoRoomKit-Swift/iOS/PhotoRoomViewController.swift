@@ -7,6 +7,9 @@
 
 import UIKit
 /// Ready to use ViewController to remove the background
+@available(iOS 10.0, *)
+@available(iOS 11.0, *)
+@available(iOS 13.0, *)
 final public class PhotoRoomViewController: UIViewController {
     enum ViewState {
         case success
@@ -57,6 +60,7 @@ final public class PhotoRoomViewController: UIViewController {
     
     // MARK: - Subviews
 
+    @available(iOS 13.0, *)
     private lazy var dismissButton: UIButton = {
         let button = UIButton(type: .close)
         button.translatesAutoresizingMaskIntoConstraints = false

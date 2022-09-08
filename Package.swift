@@ -20,8 +20,8 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "PhotoRoomKit-Swift",
-            path: "Sources",
-            sources: ["iOS"]),
+            dependencies: [],
+            resources: [.process("Shared")]),
         .testTarget(
             name: "PhotoRoomKit-SwiftTests",
             dependencies: ["PhotoRoomKit-Swift"]),

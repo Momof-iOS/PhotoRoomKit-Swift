@@ -20,7 +20,7 @@ final public class PhotoRoomViewController: UIViewController {
     let completionHandler: ((UIImage) -> Void)?
     let originalImage: UIImage
     var finalImage: UIImage? = nil
-    let icon = UIImage(named: "PhotoRoomAttribution", in: PhotoRoomRessource.bundle, compatibleWith: nil)
+    let icon = UIImage(named: "PhotoRoomAttribution", in: Bundle.module, compatibleWith: nil)
     let urlString = "https://apps.apple.com/app/apple-store/id1455009060?pt=120355336&ct=api-"
         .appending(Bundle.main.bundleIdentifier ?? "")
         .appending("&mt=8")

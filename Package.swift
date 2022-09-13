@@ -21,6 +21,8 @@ let package = Package(
         .target(
             name: "PhotoRoomKit-Swift",
             dependencies: [],
+            path: "Sources/PhotoRoomKit-Swift",
+            sources: ["iOS"],
             resources: [.process("Shared")]),
         .testTarget(
             name: "PhotoRoomKit-SwiftTests",

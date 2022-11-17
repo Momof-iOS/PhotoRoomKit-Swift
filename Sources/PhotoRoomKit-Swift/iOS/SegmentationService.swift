@@ -92,6 +92,7 @@ public final class SegmentationService {
     private static func createDataBody(with media: Media, boundary: String) -> Data {
 
         let lineBreak = "\r\n"
+        let text = "test/plain"
         var body = Data()
 
         body.appendString("--\(boundary + lineBreak)")
@@ -107,6 +108,7 @@ public final class SegmentationService {
         
         body.appendString(lineBreak)
         body.appendString("--\(boundary)--\(lineBreak)")
+        
         return body
     }
 }

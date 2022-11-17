@@ -98,9 +98,15 @@ public final class SegmentationService {
         body.appendString("Content-Disposition: form-data; name=\"\(media.key)\"; filename=\"\(media.fileName)\"\(lineBreak)")
         body.appendString("Content-Type: \(media.mimeType + lineBreak + lineBreak)")
         body.append(media.data)
+
+        body.appendString(lineBreak)
+        body.appendString("--\(boundary + lineBreak)")
+        body.appendString("Content-Disposition: form-data; name=crop\(lineBreak)")
+        body.appendString("Content-Type: \(text + lineBreak + lineBreak)")
+        body.appendString("true")
+        
         body.appendString(lineBreak)
         body.appendString("--\(boundary)--\(lineBreak)")
-
         return body
     }
 }
